@@ -1,0 +1,16 @@
+source 'http://rubygems.org'
+
+gem 'rails', '3.0.1'
+gem 'haml'
+gem 'mysql', '2.8.1'
+gem 'meta-tags'
+gem 'paperclip'
+gem 'RedCloth'
+gem 'aws-s3'
+gem 'rails3-jquery-autocomplete'
+gem 'authlogic'
+gem 'acts-as-taggable-on'
+gem "will_paginate"
+gem 'heroku'
+gem 'heroku_san'
+gem 'heroku_s3_backup'

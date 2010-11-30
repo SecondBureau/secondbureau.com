@@ -1,0 +1,32 @@
+!!!
+
+%html{html_attrs('fr-fr')}
+
+  %head
+    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'typography'
+    /[if IE]
+      = stylesheet_link_tag 'ie'
+    = javascript_include_tag :defaults
+    = javascript_include_tag "http://use.typekit.com/#{$typekit_id}.js"
+    :javascript
+      try{Typekit.load();} catch(e){}
+    = csrf_meta_tag
+    /= display_meta_tags :site => 'secondbureau.com'
+    = render :partial => 'layouts/ga' if ::Rails.env.eql?('production')
+
+
+  %body{ :id => @tabname.nil? ? 'home' : @tabname }
+    .wrapper
+      .header
+        = render :partial => 'site/demo' unless ::Rails.env.eql?('production')
+        = render :partial => 'site/header'
+      .main
+        .top
+          = render :partial => 'site/flash', :object => flash
+        .content
+          = yield
+        .bottom
+  
+      .footer
+        = render :partial => 'site/footer'
