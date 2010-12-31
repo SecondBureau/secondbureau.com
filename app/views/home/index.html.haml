@@ -1,2 +1,8 @@
 %center
-  = image_tag @wordle
+  = link_to image_tag(@wordle), @page_keywords.first.parameterize
+  %br
+  .keywords
+    %ul
+      - @page_keywords.each do |k|
+        %li= link_to k.humanize, k.parameterize 
+   

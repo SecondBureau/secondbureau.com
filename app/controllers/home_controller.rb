@@ -5,7 +5,6 @@ class HomeController < ApplicationController
     image = File.basename(images[rand(images.count)])
     @bodycolor = "color#{image.split('-')[0]}"
     @wordle= File.join('wordle', image)
-    
   end
   
 end
